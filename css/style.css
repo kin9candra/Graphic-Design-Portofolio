@@ -671,10 +671,11 @@ body {
   animation: badgeFloatMidTop 3.8s ease-in-out 1.2s infinite alternate;
 }
 
-/* Kanan Bawah Tengah (High Resolution) - Di area torso bawah objek */
+/* Kanan Bawah Tengah (High Resolution) - Di bahu kanan subjek (area sebelah kiri subjek) */
 .badge-pos-midbottom {
-  bottom: 25%;
-  right: 25%;
+  top: 59%;
+  right: 29%;
+  bottom: auto;
   left: auto;
   transform: rotate(1.8deg);
   animation: badgeFloatMidBottom 4.5s ease-in-out 0.3s infinite alternate;
