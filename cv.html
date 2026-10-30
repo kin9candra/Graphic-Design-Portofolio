@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae - Wahyu Candra | Graphic Designer</title>
+  <meta name="description" content="Curriculum Vitae resmi Wahyu Candra (kin9candra) - Graphic Designer dan Kreator Konten Visual profesional.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Icon%20Website/Logo%20kin9candra%20white.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===================================================================
+       CSS RESET & VARIABLES
+       =================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-dark: #080b09;
+      --color-dark-surface: #101412;
+      --color-dark-border: rgba(255, 255, 255, 0.12);
+      --accent-lime: #d8fc36;
+      --accent-pink: #ff3b81;
+      --accent-purple: #a855f7;
+      --accent-lime-glow: rgba(216, 252, 54, 0.35);
+      
+      --color-white: #ffffff;
+      --color-light-bg: #fbfbfb;
+      --color-text-main: #18181b;
+      --color-text-muted: #52525b;
+      --color-border-light: #e4e4e7;
+      
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #121513;
+      color: var(--color-text-main);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 15px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===================================================================
+       FLOATING ACTION BAR (SCREEN ONLY)
+       =================================================================== */
+    .action-bar {
+      width: 100%;
+      max-width: 210mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      background: rgba(16, 20, 18, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .action-brand {
+      display: inline-flex;
+      align-items: baseline;
+      text-decoration: none;
+    }
+
+    .brand-kin9 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--accent-lime);
+    }
+
+    .brand-candra {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-left: 2px;
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: var(--font-sans);
+    }
+
+    .btn-back {
+      background: transparent;
+      color: #e4e4e7;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .btn-print {
+      background: var(--accent-lime);
+      color: #060806;
+      border: 1px solid var(--accent-lime);
+      box-shadow: 0 0 15px rgba(216, 252, 54, 0.25);
+    }
+
+    .btn-print:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 18px rgba(255, 255, 255, 0.35);
+    }
+
+    /* ===================================================================
+       A4 CV SHEET CONTAINER
+       Exact Standard Dimensions: 210mm x 297mm
+       3-Column Grid:
+       1. Dark Sidebar: 71mm
+       2. Vertical Divider Strip (Static Running Text): 5mm
+       3. Main Clean White Column: 134mm
+       Total = 210mm
+       =================================================================== */
+    .cv-sheet {
+      width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      background: var(--color-white);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+      border-radius: 2px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 71mm 5mm 134mm;
+      position: relative;
+    }
+
+    /* ===================================================================
+       1. LEFT COLUMN (DARK LUXURY EDITORIAL SIDEBAR)
+       Tanpa frame foto, subjek presisi di tengah bidang,
+       dengan 5 floating badges statis khas headline portofolio.
+       =================================================================== */
+    .sidebar-col {
+      background-color: var(--color-dark);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle atmospheric glow effect */
+    .sidebar-col::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      background: radial-gradient(circle at top left, rgba(216, 252, 54, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Photo Showcase Header (Seamless, NO Frame, Center-Subject) */
+    .hero-photo-showcase {
+      width: 100%;
+      height: 68mm;
+      position: relative;
+      overflow: hidden;
+      background-color: #060806;
+      flex-shrink: 0;
+    }
+
+    .hero-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%; /* Subjek Wahyu Candra presisi di tengah bidang horizontal */
+      display: block;
+    }
+
+    /* Smooth Gradient Fade at Bottom of Photo into Dark Sidebar */
+    .hero-photo-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 24mm;
+      background: linear-gradient(to bottom, transparent 0%, rgba(8, 11, 9, 0.7) 60%, var(--color-dark) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Sidebar Main Content (Padded Text Sections) */
+    .sidebar-content {
+      padding: 2mm 6mm 6mm 7mm;
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+
+    /* Sidebar Content Sections */
+    .sidebar-section {
+      margin-bottom: 3.8mm;
+      position: relative;
+    }
+
+    .sidebar-title {
+      font-family: var(--font-sans);
+      font-size: 7.6pt;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-lime);
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sidebar-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Contact List */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.1mm;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 7pt;
+      color: #d1d5db;
+      line-height: 1.35;
+    }
+
+    .contact-icon {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      color: var(--accent-lime);
+      margin-top: 1px;
+    }
+
+    .contact-meta-label {
+      display: block;
+      font-size: 5.8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 0.5px;
+    }
+
+    .contact-val {
+      font-weight: 600;
+      color: #f3f4f6;
+    }
+
+    .contact-sub {
+      font-size: 6.2pt;
+      color: #9ca3af;
+      margin-top: 0.5px;
+    }
+
+    .contact-link {
+      color: #f3f4f6;
+      text-decoration: none;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+
+    .contact-link:hover {
+      color: var(--accent-lime);
+    }
+
+    /* Skills Badges */
+    .skills-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2mm;
+    }
+
+    .skill-sub-label {
+      font-size: 6.4pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 1mm;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.5px;
+    }
+
+    .skill-pill {
+      font-size: 6.8pt;
+      font-weight: 600;
+      padding: 2.5px 7.5px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #f3f4f6;
+    }
+
+    .skill-pill.highlight {
+      background: rgba(216, 252, 54, 0.12);
+      border-color: rgba(216, 252, 54, 0.35);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Languages */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7.1pt;
+      padding: 1.5mm 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+      color: #e5e7eb;
+    }
+
+    .lang-item:last-child {
+      border-bottom: none;
+    }
+
+    .lang-level {
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: var(--accent-lime);
+      background: rgba(216, 252, 54, 0.1);
+      padding: 1px 6px;
+      border-radius: 9999px;
+    }
+
+    .sidebar-footer-brand {
+      padding-top: 2.5mm;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-mini-text {
+      font-size: 6.4pt;
+      color: #6b7280;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===================================================================
+       2. VERTICAL DIVIDER SPINE (STATIC RUNNING TEXT STRIP)
+       Diadaptasi dari Running Text Marquee Web Portofolio
+       Menjadi garis pembatas vertikal statis setinggi 297mm
+       =================================================================== */
+    .vertical-divider-spine {
+      background-color: #040504;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      border-right: 1px solid #e4e4e7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+    }
+
+    .spine-ticker-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+      font-family: var(--font-sans);
+      font-size: 5.6pt;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #52525b;
+      user-select: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .spine-ticker-text span.ticker-highlight {
+      color: #a1a1aa;
+    }
+
+    .spine-ticker-text .spine-dot {
+      color: var(--accent-lime);
+      font-size: 5pt;
+      margin: 1.8mm 0;
+      display: inline-block;
+    }
+
+    /* ===================================================================
+       3. RIGHT COLUMN (PURE WHITE CLEAN EDITORIAL CONTENT)
+       =================================================================== */
+    .main-col {
+      background-color: var(--color-white);
+      padding: 14mm 10mm 12mm 10mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* Header Profile Info */
+    .main-header {
+      border-bottom: 1.5px solid #000000;
+      padding-bottom: 3.2mm;
+      margin-bottom: 4mm;
+    }
+
+    .name-heading {
+      font-family: var(--font-sans);
+      font-size: 25pt;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: #000000;
+      margin-bottom: 1.8mm;
+    }
+
+    .role-heading {
+      font-family: var(--font-sans);
+      font-size: 12.5pt;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .role-serif-accent {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 600;
+      color: #000000;
+      letter-spacing: -0.01em;
+    }
+
+    .role-badge {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #000000;
+      margin: 0 4px;
+    }
+
+    /* Content Section */
+    .content-section {
+      margin-bottom: 4mm;
+    }
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: 9.2pt;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 11px;
+      background: #000000;
+      border-radius: 2px;
+    }
+
+    /* Professional Summary */
+    .summary-text {
+      font-size: 8.1pt;
+      color: #374151;
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    /* Experience Timeline */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2mm;
+    }
+
+    .experience-item {
+      position: relative;
+      padding-left: 12px;
+      border-left: 1.5px solid #e5e7eb;
+    }
+
+    .experience-item::before {
+      content: "";
+      position: absolute;
+      left: -4.5px;
+      top: 3px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #000000;
+      border: 1.5px solid #ffffff;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8mm;
+    }
+
+    .exp-role {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.01em;
+    }
+
+    .exp-period {
+      font-size: 7.1pt;
+      font-weight: 700;
+      color: #4b5563;
+      background: #f4f4f5;
+      padding: 1.5px 7px;
+      border-radius: 4px;
+    }
+
+    .exp-company {
+      font-size: 7.9pt;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 1.2mm;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1mm;
+    }
+
+    .exp-bullets li {
+      font-size: 7.6pt;
+      color: #4b5563;
+      line-height: 1.45;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .exp-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000000;
+      font-weight: bold;
+    }
+
+    /* Education Item */
+    .edu-card {
+      background: #fafafa;
+      border: 1px solid #f0f0f0;
+      border-radius: 8px;
+      padding: 2.8mm 4mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .edu-inst {
+      font-size: 8.6pt;
+      font-weight: 800;
+      color: #000000;
+    }
+
+    .edu-degree {
+      font-size: 7.6pt;
+      color: #4b5563;
+      margin-top: 0.5mm;
+    }
+
+    .edu-period {
+      font-size: 7.1pt;
+      font-weight: 700;
+      color: #000000;
+      background: #ffffff;
+      border: 1px solid #e4e4e7;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Portfolio Callout Box (Seimbang & Proporsional: Judul | Deskripsi, lalu Link di Bawah) */
+    .portfolio-callout {
+      background: #080b09;
+      border-radius: 8px;
+      padding: 3mm 4.5mm 3.2mm;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2mm;
+      color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .callout-top-row {
+      display: flex;
+      align-items: center;
+      gap: 3.5mm;
+    }
+
+    .callout-title {
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .callout-divider-v {
+      width: 1px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.22);
+      flex-shrink: 0;
+    }
+
+    .callout-desc {
+      font-size: 6.8pt;
+      color: #9ca3af;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .callout-bottom-row {
+      display: flex;
+      align-items: center;
+      padding-top: 1.8mm;
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    }
+
+    .callout-url-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: var(--accent-lime);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: all 0.2s ease;
+    }
+
+    .callout-url-link:hover {
+      color: #ffffff;
+    }
+
+    /* Language Switcher Pill Toggle */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      padding: 2px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .lang-switch:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(216, 252, 54, 0.5);
+    }
+
+    .lang-switch .lang-option {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 9999px;
+      color: #a1a1aa;
+      transition: all 0.25s ease;
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+
+    .lang-switch .lang-option.active {
+      background: var(--accent-lime);
+      color: #060806;
+      font-weight: 800;
+      box-shadow: 0 0 10px rgba(216, 252, 54, 0.35);
+    }
+
+    /* ===================================================================
+       PRINT STYLING (PERFECT 1-PAGE A4 OUTPUT)
+       =================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .cv-sheet {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================================
+       Floating Action Bar (Disembunyikan Otomatis Saat Dicetak / Save PDF)
+       =================================================================== -->
+  <aside class="action-bar no-print" aria-label="Aksi Halaman CV">
+    <a href="index.html" class="action-brand">
+      <span class="brand-kin9">kin9</span><span class="brand-candra">candra</span>
+    </a>
+
+    <div class="action-buttons">
+      <!-- Language Switcher Pill Toggle -->
+      <button type="button" class="lang-switch" id="cvLangSwitch" aria-label="Ganti Bahasa / Switch Language" title="Ganti Bahasa / Switch Language">
+        <span class="lang-option lang-id active">ID</span>
+        <span class="lang-option lang-en">EN</span>
+      </button>
+
+      <a href="index.html" class="btn-action btn-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span data-i18n="cv_btn_back">Lihat Portofolio</span>
+      </a>
+      <button type="button" class="btn-action btn-print" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span data-i18n="cv_btn_print">Cetak / Simpan PDF (A4)</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===================================================================
+       A4 CV Canvas Sheet (210mm x 297mm)
+       =================================================================== -->
+  <main class="cv-sheet" id="cvCanvas">
+
+    <!-- ==================== 1. LEFT COLUMN (DARK SIDEBAR) ==================== -->
+    <aside class="sidebar-col">
+      
+      <!-- Showcase Foto Subjek Asli: Bersih Tanpa Frame, Subjek Presisi di Tengah Bidang -->
+      <div class="hero-photo-showcase">
+        <img src="Headline/Wahyu_Candra_CV.jpg" alt="Foto Wahyu Candra - Graphic Designer" class="hero-photo-img">
+        <div class="hero-photo-fade"></div>
+      </div>
+
+      <!-- Bagian Konten Teks Sidebar -->
+      <div class="sidebar-content">
+        
+        <!-- 1. Kontak & Identitas Diri -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title" data-i18n="cv_title_contact">Kontak &amp; Info</h2>
+          <ul class="contact-list">
+            
+            <!-- Tempat Tanggal Lahir -->
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <div>
+                <span class="contact-meta-label" data-i18n="cv_lbl_ttl">Tempat, Tanggal Lahir</span>
+                <span class="contact-val" data-i18n="cv_val_ttl">Engkepar, 11-11-1995</span>
+              </div>
+            </li>
+
+            <!-- Email -->
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <span class="contact-meta-label" data-i18n="cv_lbl_email">Email</span>
+                <a href="mailto:kin9candra@gmail.com" class="contact-link">kin9candra@gmail.com</a>
+              </div>
+            </li>
+
+            <!-- WhatsApp -->
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div>
+                <span class="contact-meta-label" data-i18n="cv_lbl_wa">Telepon / WhatsApp</span>
+                <a href="https://wa.me/6285159668886" target="_blank" rel="noopener noreferrer" class="contact-link">0851 5966 8886</a>
+              </div>
+            </li>
+
+            <!-- Domisili -->
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <span class="contact-meta-label" data-i18n="cv_lbl_domisili">Domisili</span>
+                <span class="contact-val" data-i18n="cv_val_domisili">Kubu Raya, Kalimantan Barat</span>
+                <div class="contact-sub" data-i18n="cv_sub_domisili">Desa Pal Sembilan, Kec. Sungai Kakap</div>
+              </div>
+            </li>
+
+            <!-- Instagram -->
+            <li class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <div>
+                <span class="contact-meta-label" data-i18n="cv_lbl_ig">Instagram</span>
+                <a href="https://instagram.com/kin9candra" target="_blank" rel="noopener noreferrer" class="contact-link" style="color: var(--accent-lime); font-weight: 700;">kin9candra</a>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- 2. Keahlian Teknis (Hard Skills) -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title" data-i18n="cv_title_skills">Keahlian Desain</h2>
+          <div class="skills-group">
+            <div>
+              <div class="skill-sub-label" data-i18n="cv_lbl_tools">Software &amp; Tools</div>
+              <div class="skill-pills">
+                <span class="skill-pill highlight">Adobe Photoshop</span>
+                <span class="skill-pill highlight">Adobe Illustrator</span>
+                <span class="skill-pill highlight">Canva</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-sub-label" data-i18n="cv_lbl_soft">Keahlian Pendukung (Soft Skills)</div>
+              <div class="skill-pills">
+                <span class="skill-pill" data-i18n="cv_skill_comm">Komunikasi</span>
+                <span class="skill-pill" data-i18n="cv_skill_time">Manajemen Waktu</span>
+                <span class="skill-pill" data-i18n="cv_skill_team">Teamwork</span>
+                <span class="skill-pill" data-i18n="cv_skill_adapt">Kemampuan Beradaptasi</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Penguasaan Bahasa -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title" data-i18n="cv_title_lang">Bahasa</h2>
+          <div>
+            <div class="lang-item">
+              <span data-i18n="cv_lang_id">Bahasa Indonesia</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-item">
+              <span data-i18n="cv_lang_en">Bahasa Inggris</span>
+              <span class="lang-level">Intermediate</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sidebar Mini Footer -->
+        <div class="sidebar-footer-brand">
+          <span class="brand-mini-text">WAHYU CANDRA &bull; CV</span>
+          <span style="font-size: 6.2pt; color: var(--accent-lime); font-weight: 700;">2026 EDITION</span>
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- ==================== 2. VERTICAL DIVIDER SPINE (STATIC RUNNING TEXT STRIP) ==================== -->
+    <div class="vertical-divider-spine" aria-hidden="true">
+      <div class="spine-ticker-text">
+        <span class="ticker-highlight">SOCIAL MEDIA POST</span><span class="spine-dot">✦</span>
+        <span>LOGO DESIGN PRESENTATION</span><span class="spine-dot">✦</span>
+        <span class="ticker-highlight">BRAND IDENTITY &amp; GUIDELINE</span><span class="spine-dot">✦</span>
+        <span>WEDDING INVITATION</span><span class="spine-dot">✦</span>
+        <span class="ticker-highlight">TEXT EFFECTS</span><span class="spine-dot">✦</span>
+        <span>PRESENTATION TEMPLATES</span><span class="spine-dot">✦</span>
+        <span class="ticker-highlight">100% CUSTOM WORK</span><span class="spine-dot">✦</span>
+        <span>HIGH RESOLUTION</span><span class="spine-dot">✦</span>
+        <span class="ticker-highlight">BRAND SPECIALIST</span><span class="spine-dot">✦</span>
+        <span>SOCIAL MEDIA POST</span><span class="spine-dot">✦</span>
+        <span class="ticker-highlight">LOGO DESIGN PRESENTATION</span><span class="spine-dot">✦</span>
+      </div>
+    </div>
+
+    <!-- ==================== 3. RIGHT COLUMN (PURE WHITE CLEAN CONTENT) ==================== -->
+    <section class="main-col">
+      
+      <!-- Profile Title Header -->
+      <header class="main-header">
+        <h1 class="name-heading">Wahyu Candra</h1>
+        <div class="role-heading">
+          <span>Graphic Designer</span>
+          <span class="role-badge"></span>
+          <span class="role-serif-accent">Visual Content Creator.</span>
+        </div>
+      </header>
+
+      <!-- 1. Ringkasan Profesional -->
+      <section class="content-section">
+        <h2 class="section-title" data-i18n="cv_title_about">Tentang Saya</h2>
+        <p class="summary-text" data-i18n="cv_desc_about">
+          Graphic Designer dan kreator konten visual dengan pengalaman lebih dari 5 tahun dalam ekosistem kerja mandiri (freelance) maupun institusi. Menggabungkan latar belakang kepemimpinan media dan keahlian teknis desain (Photoshop, Illustrator, Canva) untuk menghasilkan karya yang terstruktur, tepat sasaran, serta didukung oleh manajemen waktu dan komunikasi yang solid.
+        </p>
+      </section>
+
+      <!-- 2. Pengalaman Kerja & Media -->
+      <section class="content-section">
+        <h2 class="section-title" data-i18n="cv_title_exp">Pengalaman Kerja &amp; Media</h2>
+        <div class="experience-list">
+          
+          <!-- Experience 1 -->
+          <article class="experience-item">
+            <div class="exp-header">
+              <h3 class="exp-role" data-i18n="cv_exp1_role">Koordinator Media</h3>
+              <span class="exp-period">2021 &ndash; 2023</span>
+            </div>
+            <div class="exp-company">Al-Fityan School Kubu Raya</div>
+            <ul class="exp-bullets">
+              <li data-i18n="cv_exp1_bullet1">Memimpin perencanaan konsep visual dan produksi materi publikasi digital instansi.</li>
+              <li data-i18n="cv_exp1_bullet2">Mengoordinasikan publikasi media sosial berkala, materi promosi acara, dan dokumentasi visual.</li>
+              <li data-i18n="cv_exp1_bullet3">Menjaga konsistensi identitas merek (brand identity) institusi di berbagai saluran komunikasi.</li>
+            </ul>
+          </article>
+
+          <!-- Experience 2 -->
+          <article class="experience-item">
+            <div class="exp-header">
+              <h3 class="exp-role" data-i18n="cv_exp2_role">Koordinator Media</h3>
+              <span class="exp-period">2018 &ndash; 2020</span>
+            </div>
+            <div class="exp-company">Pesantren Labbaik Litahfizhil Qur'an</div>
+            <ul class="exp-bullets">
+              <li data-i18n="cv_exp2_bullet1">Bertanggung jawab penuh atas kebutuhan aset visual, desain dakwah, dan publikasi lembaga.</li>
+              <li data-i18n="cv_exp2_bullet2">Merancang poster, spanduk, feeds media sosial, dan materi informasi visual secara berkala.</li>
+              <li data-i18n="cv_exp2_bullet3">Meningkatkan kualitas keterbacaan materi informasi visual kepada masyarakat dan wali santri.</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3. Pendidikan -->
+      <section class="content-section">
+        <h2 class="section-title" data-i18n="cv_title_edu">Pendidikan</h2>
+        <div class="edu-card">
+          <div>
+            <div class="edu-inst">IAIN Pontianak</div>
+            <div class="edu-degree" data-i18n="cv_edu_degree">Pendidikan Agama Islam (S1)</div>
+          </div>
+          <span class="edu-period">2013 &ndash; 2017</span>
+        </div>
+      </section>
+
+      <!-- 4. Portofolio Callout Box (Seimbang: Judul | Deskripsi, lalu Link di Bawah) -->
+      <footer class="portfolio-callout">
+        <!-- Baris Atas: Judul (Kiri) + Pembatas Garis Vertikal + Deskripsi (Kanan) -->
+        <div class="callout-top-row">
+          <div class="callout-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-lime)" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span data-i18n="cv_callout_title">Portofolio Digital Lengkap</span>
+          </div>
+
+          <div class="callout-divider-v" aria-hidden="true"></div>
+
+          <p class="callout-desc" data-i18n="cv_callout_desc">Showcase 30+ karya high-res: Social Media, Logo, Wedding, Text Effects &amp; Presentation.</p>
+        </div>
+
+        <!-- Baris Bawah: Link Portofolio Menjangkau di Bawah Keduanya -->
+        <div class="callout-bottom-row">
+          <a href="https://kin9candra.github.io/Graphic-Design-Portofolio" target="_blank" rel="noopener noreferrer" class="callout-url-link">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <span>kin9candra.github.io/Graphic-Design-Portofolio</span>
+          </a>
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+</body>
+</html>

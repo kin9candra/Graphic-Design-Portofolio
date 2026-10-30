@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desain Email Lamaran - Wahyu Candra | Toko Royal (Apple Minimalist Edition)</title>
+  <meta name="description"
+    content="Template Email Lamaran Kerja Graphic Designer untuk Toko Royal oleh Wahyu Candra - Nuansa Bersih & Modern khas Apple.">
+
+  <style>
+    /* ===================================================================
+       PREVIEW PAGE WRAPPER (APPLE CLEAN LIGHT AESTHETIC)
+       =================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f5f7;
+      color: #1d1d1f;
+      padding: 30px 15px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Action Toolbar */
+    .top-toolbar {
+      width: 100%;
+      max-width: 620px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-title span {
+      font-weight: 400;
+      color: #86868b;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-copy {
+      background: #0071e3;
+      color: #ffffff;
+      border: 1px solid #0071e3;
+    }
+
+    .btn-copy:hover {
+      background: #0077ed;
+      box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #1d1d1f;
+      border: 1px solid #d2d2d7;
+    }
+
+    .btn-secondary:hover {
+      background: #f5f5f7;
+    }
+
+    /* Notification Toast */
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      background: #1d1d1f;
+      color: #ffffff;
+      padding: 11px 24px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateY(10px);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Gmail Preview Window */
+    .gmail-window {
+      width: 100%;
+      max-width: 620px;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+      border: 1px solid #d2d2d7;
+    }
+
+    .gmail-chrome-bar {
+      background: #ffffff;
+      padding: 14px 22px;
+      border-bottom: 1px solid #e5e5ea;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: #1d1d1f;
+    }
+
+    .gmail-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .gmail-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red {
+      background: #ff5f56;
+    }
+
+    .dot-yellow {
+      background: #ffbd2e;
+    }
+
+    .dot-green {
+      background: #27c93f;
+    }
+
+    .gmail-subject-line {
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-left: 6px;
+    }
+
+    /* Instruction Note */
+    .instruction-note {
+      max-width: 620px;
+      width: 100%;
+      margin-top: 20px;
+      background: #ffffff;
+      border: 1px solid #d2d2d7;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 0.8rem;
+      color: #515154;
+      line-height: 1.6;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .instruction-note strong {
+      color: #1d1d1f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Action Toolbar -->
+  <aside class="top-toolbar">
+    <div class="brand-title">
+      kin9candra <span>/ Email Lamaran (Apple Style)</span>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-copy" onclick="copyEmailContent()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span>Salin Tampilan Pesan (Paste ke Gmail)</span>
+      </button>
+
+      <a href="index.html" class="btn btn-secondary">
+        <span>Kembali</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toastMessage">Pesan berhasil disalin! Silakan langsung Paste (Ctrl+V) di Gmail.</div>
+
+  <!-- Gmail Client Window Container -->
+  <div class="gmail-window">
+
+    <!-- Window Bar Header -->
+    <div class="gmail-chrome-bar">
+      <div class="gmail-dots">
+        <span class="gmail-dot dot-red"></span>
+        <span class="gmail-dot dot-yellow"></span>
+        <span class="gmail-dot dot-green"></span>
+      </div>
+      <div class="gmail-subject-line">Subjek: Lamaran Pekerjaan - Graphic Designer - Wahyu Candra</div>
+    </div>
+
+    <!-- ===================================================================
+         DESAIN PESAN EMAIL HTML RESMI (NUANSA CLEAN APPLE AESTHETIC)
+         100% Menggunakan Inline CSS & Font Bawaan Gmail (Arial & Helvetica)
+         Tanpa latar hitam pekat, tanpa warna hijau neon. Bersih & Elegan.
+         =================================================================== -->
+    <div id="emailContainer"
+      style="background-color: #ffffff; padding: 32px 30px; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; color: #1d1d1f; line-height: 1.65; max-width: 600px; margin: 0 auto;">
+
+      <!-- 1. Header Minimalis Brand kin9candra -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"
+        style="margin-bottom: 26px; padding-bottom: 18px; border-bottom: 1px solid #f2f2f7;">
+        <tr>
+          <td>
+            <div
+              style="font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 19px; font-weight: 800; color: #1d1d1f; letter-spacing: -0.4px; line-height: 1;">
+              kin9candra
+            </div>
+            <div
+              style="font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11px; color: #86868b; letter-spacing: 0.3px; margin-top: 4px; font-weight: 500;">
+              Graphic Designer &bull; Visual Content Creator
+            </div>
+          </td>
+          <td align="right" valign="top">
+            <span
+              style="display: inline-block; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #515154; background-color: #f5f5f7; border: 1px solid #e5e5ea; padding: 4px 10px; border-radius: 20px;">
+              Job Application
+            </span>
+          </td>
+        </tr>
+      </table>
+
+      <!-- 2. Penerima Surat -->
+      <div
+        style="margin-bottom: 22px; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.5; color: #1d1d1f;">
+        <div style="font-weight: 700; color: #1d1d1f;">Yth. Bapak/Ibu Pimpinan HRD</div>
+        <div style="font-weight: 700; color: #1d1d1f;">Toko Royal</div>
+        <div style="color: #6e6e73;">di Pontianak</div>
+      </div>
+
+      <!-- 3. Salam Pembuka -->
+      <p
+        style="margin: 0 0 16px 0; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 14px; color: #1d1d1f;">
+        Dengan hormat,
+      </p>
+
+      <!-- 4. Paragraf 1: Pengenalan & Minat Lamaran -->
+      <p
+        style="margin: 0 0 16px 0; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 14px; color: #1d1d1f; text-align: justify; line-height: 1.65;">
+        Perkenalkan saya <strong>Wahyu Candra</strong>. Berdasarkan informasi melalui Social Media, saya tertarik
+        melamar lowongan kerja sebagai <strong>Graphic Designer</strong> di Toko Royal.
+      </p>
+
+      <!-- 5. Paragraf 2: Keahlian Teknis & Pengalaman -->
+      <p
+        style="margin: 0 0 14px 0; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 14px; color: #1d1d1f; text-align: justify; line-height: 1.65;">
+        Saya cukup terampil mengoperasikan beberapa software design seperti <strong>Adobe Illustrator</strong>,
+        <strong>Adobe Photoshop</strong>, dan <strong>Canva</strong>. Saya juga sudah menekuni dan menjalani karir
+        sebagai seorang desainer grafis lebih dari <strong>5 tahun</strong>.
+      </p>
+
+      <!-- 6. Tag Keahlian Minimalis (Apple Style Soft Pills) -->
+      <table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 18px;">
+        <tr>
+          <td style="padding-right: 6px; padding-bottom: 6px;">
+            <span
+              style="display: inline-block; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #1d1d1f; background-color: #f5f5f7; border: 1px solid #e5e5ea; padding: 4px 10px; border-radius: 20px;">
+              Adobe Illustrator
+            </span>
+          </td>
+          <td style="padding-right: 6px; padding-bottom: 6px;">
+            <span
+              style="display: inline-block; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #1d1d1f; background-color: #f5f5f7; border: 1px solid #e5e5ea; padding: 4px 10px; border-radius: 20px;">
+              Adobe Photoshop
+            </span>
+          </td>
+          <td style="padding-right: 6px; padding-bottom: 6px;">
+            <span
+              style="display: inline-block; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #1d1d1f; background-color: #f5f5f7; border: 1px solid #e5e5ea; padding: 4px 10px; border-radius: 20px;">
+              Canva
+            </span>
+          </td>
+          <td style="padding-bottom: 6px;">
+            <span
+              style="display: inline-block; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; color: #1d1d1f; background-color: #f5f5f7; border: 1px solid #e5e5ea; padding: 4px 10px; border-radius: 20px;">
+              5+ Tahun Pengalaman
+            </span>
+          </td>
+        </tr>
+      </table>
+
+      <!-- 7. Paragraf 3: Lampiran CV & Portofolio -->
+      <p
+        style="margin: 0 0 18px 0; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 14px; color: #1d1d1f; text-align: justify; line-height: 1.65;">
+        Sebagai pelengkap, saya telah melampirkan <strong>CV</strong> dan <strong>Portofolio</strong> dalam pesan e-mail
+        ini. Saya juga telah melampirkan website portofolio pribadi saya pada pesan ini. Semoga bisa menjadi
+        pertimbangan.
+      </p>
+
+      <!-- 8. Kotak Tautan Portofolio Online (Clean Card khas Apple) -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"
+        style="background-color: #fbfbfd; border: 1px solid #e5e5ea; border-radius: 10px; margin-bottom: 22px;">
+        <tr>
+          <td style="padding: 13px 18px;">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td>
+                  <div
+                    style="font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 12.5px; font-weight: 700; color: #1d1d1f;">
+                    Website Portofolio Online
+                  </div>
+                  <div
+                    style="font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11.5px; color: #0071e3; margin-top: 2px;">
+                    kin9candra.github.io/Graphic-Design-Portofolio
+                  </div>
+                </td>
+                <td align="right">
+                  <a href="https://kin9candra.github.io/Graphic-Design-Portofolio" target="_blank"
+                    style="display: inline-block; background-color: #0071e3; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; text-decoration: none; padding: 6px 14px; border-radius: 20px;">
+                    Lihat Portofolio &rarr;
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <!-- 9. Penutup Surat -->
+      <p
+        style="margin: 0 0 16px 0; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 14px; color: #1d1d1f;">
+        Terima kasih,
+      </p>
+
+      <p
+        style="margin: 0 0 4px 0; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 14px; color: #6e6e73;">
+        Hormat saya,
+      </p>
+      <p
+        style="margin: 0 0 24px 0; font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 15px; color: #1d1d1f;">
+        Wahyu Candra
+      </p>
+
+      <!-- 10. Garis Pemisah Signature Minimalis -->
+      <div style="border-top: 1px solid #e5e5ea; width: 100%; margin-bottom: 18px;"></div>
+
+      <!-- 11. Signature Block Murni Teks (Tanpa Ikon WC, Clean & Langsung Teks) -->
+      <div
+        style="font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 12.5px; color: #1d1d1f; line-height: 1.5;">
+        <div style="font-weight: 700; font-size: 14px; color: #1d1d1f;">
+          Wahyu Candra
+        </div>
+        <div style="color: #6e6e73; font-size: 11.5px; margin-top: 1px; margin-bottom: 8px;">
+          Graphic Designer
+        </div>
+
+        <table border="0" cellpadding="0" cellspacing="0"
+          style="font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif; font-size: 11.5px; color: #424245; line-height: 1.6;">
+          <tr>
+            <td style="color: #86868b; padding-right: 8px;">No. HP / WhatsApp</td>
+            <td style="color: #86868b; padding-right: 8px;">:</td>
+            <td><a href="https://wa.me/6285159668886" target="_blank"
+                style="color: #1d1d1f; font-weight: 600; text-decoration: none;">+62 851-5966-8886</a></td>
+          </tr>
+          <tr>
+            <td style="color: #86868b; padding-right: 8px;">Email</td>
+            <td style="color: #86868b; padding-right: 8px;">:</td>
+            <td><a href="mailto:kin9candra@gmail.com"
+                style="color: #0071e3; font-weight: 500; text-decoration: none;">kin9candra@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td style="color: #86868b; padding-right: 8px;">Website</td>
+            <td style="color: #86868b; padding-right: 8px;">:</td>
+            <td><a href="https://kin9candra.github.io/Graphic-Design-Portofolio" target="_blank"
+                style="color: #0071e3; font-weight: 500; text-decoration: none;">kin9candra.github.io/Graphic-Design-Portofolio</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Petunjuk Praktis untuk Pengguna -->
+  <div class="instruction-note">
+    <strong>Petunjuk Penggunaan di Gmail:</strong>
+    <ol style="margin-top: 6px; padding-left: 18px; line-height: 1.6;">
+      <li>Klik tombol biru <strong>"Salin Tampilan Pesan (Paste ke Gmail)"</strong> di pojok kanan atas.</li>
+      <li>Buka <a href="https://mail.google.com" target="_blank"
+          style="color: #0071e3; text-decoration: none; font-weight: 600;">Gmail</a> &rarr; klik <strong>"Tulis"
+          (Compose)</strong>.</li>
+      <li>Tulis alamat email HRD Toko Royal dan subjek:
+        <code>Lamaran Pekerjaan - Graphic Designer - Wahyu Candra</code>.</li>
+      <li>Klik pada area isi pesan email, lalu tekan <strong>Ctrl + V</strong> (Paste). Desain email yang bersih, rapi,
+        dan modern khas Apple akan langsung menempel sempurna.</li>
+      <li>Lampirkan berkas PDF CV dan Portofolio melalui tombol klip kertas (Attach files) sebelum mengirim.</li>
+    </ol>
+  </div>
+
+  <!-- Script Copy to Clipboard (HTML & Rich Text) -->
+  <script>
+    async function copyEmailContent() {
+      const emailElem = document.getElementById('emailContainer');
+      const toast = document.getElementById('toastMessage');
+
+      try {
+        const htmlContent = emailElem.innerHTML;
+        const textContent = emailElem.innerText;
+
+        const blobHtml = new Blob([htmlContent], { type: 'text/html' });
+        const blobText = new Blob([textContent], { type: 'text/plain' });
+
+        const data = [new ClipboardItem({
+          'text/html': blobHtml,
+          'text/plain': blobText
+        })];
+
+        await navigator.clipboard.write(data);
+
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 4000);
+      } catch (err) {
+        const range = document.createRange();
+        range.selectNode(emailElem);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+
+        toast.innerText = 'Pesan berhasil disalin! Silakan langsung Paste (Ctrl+V) di Gmail.';
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 4000);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

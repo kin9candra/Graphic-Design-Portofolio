@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kin9candra's Portofolio - Desain Grafis A4</title>
+  <meta name="description" content="kin9candra's Portofolio - Koleksi Desain Grafis resmi Wahyu Candra dalam format A4.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Icon%20Website/Logo%20kin9candra%20white.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===================================================================
+       CSS RESET & MINIMALIST FULL-PAGE A4 GALLERY VARIABLES
+       =================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-dark: #080b09;
+      --accent-lime: #d8fc36;
+      --color-white: #ffffff;
+      --color-text-main: #09090b;
+      --color-text-sub: #71717a;
+      --color-border: #e4e4e7;
+      
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #121513;
+      color: var(--color-text-main);
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 15px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===================================================================
+       FLOATING ACTION BAR (SCREEN ONLY - HIDDEN IN PRINT)
+       =================================================================== */
+    .action-bar {
+      width: 100%;
+      max-width: 210mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 12px 20px;
+      background: rgba(16, 20, 18, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .action-brand {
+      display: inline-flex;
+      align-items: baseline;
+      text-decoration: none;
+    }
+
+    .brand-kin9 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--accent-lime);
+    }
+
+    .brand-candra {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-left: 2px;
+    }
+
+    .brand-portfolio-tag {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #d1d5db;
+      margin-left: 6px;
+    }
+
+    .page-nav-pills {
+      display: flex;
+      gap: 6px;
+    }
+
+    .page-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #a1a1aa;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .page-pill:hover, .page-pill.active {
+      color: #060806;
+      background: var(--accent-lime);
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: var(--font-sans);
+    }
+
+    .btn-back {
+      background: transparent;
+      color: #e4e4e7;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .btn-print {
+      background: var(--accent-lime);
+      color: #060806;
+      border: 1px solid var(--accent-lime);
+      box-shadow: 0 0 15px rgba(216, 252, 54, 0.25);
+    }
+
+    .btn-print:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 18px rgba(255, 255, 255, 0.35);
+    }
+
+    /* ===================================================================
+       A4 PAGE CONTAINER SPECIFICATION (EXACT 210mm x 297mm)
+       LAYOUT MAKSIMAL: Konten meregang 100% mengisi seluruh tinggi
+       =================================================================== */
+    .a4-page {
+      width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      background: var(--color-white);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+      border-radius: 2px;
+      margin-bottom: 35px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Minimalist Page Footer */
+    .page-footer-bar {
+      height: 8.5mm;
+      padding: 0 11mm;
+      background: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 6.8pt;
+      color: var(--color-text-sub);
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .page-footer-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .page-footer-bullet {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--color-text-sub);
+    }
+
+    .page-footer-num {
+      font-weight: 800;
+      color: #000000;
+      background: #f4f4f5;
+      padding: 1.5px 8px;
+      border-radius: 4px;
+    }
+
+    /* ===================================================================
+       PAGE HEADERS
+       =================================================================== */
+    .p1-header-dark {
+      background-color: var(--color-dark);
+      color: #ffffff;
+      padding: 6.5mm 11mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--accent-lime);
+      flex-shrink: 0;
+    }
+
+    .p1-brand-combo {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .p1-brand-kin9 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 19pt;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .p1-brand-candra {
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16pt;
+      color: var(--accent-lime);
+      margin-left: 2px;
+    }
+
+    .p1-brand-portfolio {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 14pt;
+      font-weight: 500;
+      color: #ffffff;
+      margin-left: 6px;
+    }
+
+    .p1-profile-capsule {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 3px 10px 3px 4px;
+      border-radius: 9999px;
+    }
+
+    .p1-avatar-mini {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 10%;
+      border: 1.5px solid var(--accent-lime);
+    }
+
+    .p1-profile-info {
+      display: flex;
+      flex-direction: column;
+      font-size: 6.8pt;
+      line-height: 1.25;
+    }
+
+    .p1-profile-name {
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .p1-profile-contact {
+      color: #a1a1aa;
+    }
+
+    .p1-profile-contact strong {
+      color: var(--accent-lime);
+    }
+
+    /* Minimal Inner Page Header (Pages 2, 3, 4) */
+    .page-minimal-header {
+      padding: 5.5mm 11mm 2.2mm;
+      border-bottom: 1.5px solid #000000;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+
+    .pmh-tag {
+      font-size: 6.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-text-sub);
+      margin-bottom: 0.6mm;
+    }
+
+    .pmh-title {
+      font-size: 14.5pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #000000;
+      line-height: 1;
+    }
+
+    .pmh-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .pmh-meta {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: var(--color-text-sub);
+    }
+
+    /* Sub-header category bar */
+    .category-sub-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5mm;
+      padding-bottom: 1.8mm;
+      border-bottom: 1.5px solid #000000;
+      flex-shrink: 0;
+    }
+
+    .csb-tag {
+      font-size: 6.4pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-text-sub);
+      margin-bottom: 0.6mm;
+    }
+
+    .csb-title {
+      font-size: 15pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #000000;
+      line-height: 1;
+    }
+
+    .csb-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .csb-meta {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: var(--color-text-sub);
+    }
+
+    /* ===================================================================
+       PAGE BODIES (FLEX: 1 TO FILL ENTIRE HEIGHT WITH ZERO EMPTY GAP)
+       =================================================================== */
+    .page-full-body {
+      padding: 4mm 11mm 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* 2x2 Grid (Fills 100% available vertical space) */
+    .grid-2x2-full {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 4mm;
+      flex: 1;
+      height: 100%;
+      margin-bottom: 3mm;
+    }
+
+    .art-frame-box {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f1f5f9;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .art-frame-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Darker frame for 16:9 Logo Mockups */
+    .art-frame-dark {
+      background: #09090b;
+    }
+
+    /* 16:9 Native Aspect Ratio Logo Grid (5 Rows x 2 Columns = 10 Professional Mockup Slides) */
+    .logo-mockup-10grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(5, 1fr);
+      gap: 2mm 3.5mm;
+      flex: 1;
+      height: 100%;
+      margin-bottom: 2mm;
+    }
+
+    .logo-frame-16x9 {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #09090b;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo-frame-16x9 img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ===================================================================
+       PAGE 4: WEDDING (4) & TEXT EFFECTS (4) + CONTACT STRIP
+       =================================================================== */
+    .p4-section-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: 1.8mm;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .p4-section-label::before {
+      content: "";
+      width: 3px;
+      height: 9px;
+      background: #000000;
+      border-radius: 1px;
+    }
+
+    .p4-double-row-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3.5mm;
+      flex: 1;
+      margin-bottom: 3.5mm;
+    }
+
+    .p4-art-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      background: #f1f5f9;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .p4-art-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Minimalist General Contact Strip (No unneeded text) */
+    .p4-contact-card {
+      background: var(--color-dark);
+      color: #ffffff;
+      border-radius: 7px;
+      padding: 3.5mm 5.5mm;
+      border: 1px solid rgba(216, 252, 54, 0.35);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3mm;
+      flex-shrink: 0;
+    }
+
+    .p4-contact-name {
+      font-size: 10pt;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .p4-contact-name span {
+      color: var(--accent-lime);
+    }
+
+    .p4-contact-pills {
+      display: flex;
+      gap: 5mm;
+    }
+
+    .p4-pill-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .p4-pill-lbl {
+      font-size: 5.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    .p4-pill-val {
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .p4-pill-val.accent {
+      color: var(--accent-lime);
+    }
+
+    /* ===================================================================
+       PRINT MEDIA CONFIGURATION (EXACT 4-PAGE A4 OUTPUT)
+       =================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 210mm !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .a4-page {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+      }
+
+      .a4-page:last-child {
+        page-break-after: avoid !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================================
+       Floating Action Bar (Disembunyikan Otomatis Saat Cetak / Save PDF)
+       =================================================================== -->
+  <aside class="action-bar no-print" aria-label="Aksi Portofolio A4">
+    <a href="index.html" class="action-brand">
+      <span class="brand-kin9">kin9</span><span class="brand-candra">candra's</span>
+      <span class="brand-portfolio-tag">Portofolio</span>
+    </a>
+
+    <div class="page-nav-pills">
+      <a href="#page1" class="page-pill active">Hal 1: Social Media (01-04)</a>
+      <a href="#page2" class="page-pill">Hal 2: Social Media (05-08)</a>
+      <a href="#page3" class="page-pill">Hal 3: Logo Mockups</a>
+      <a href="#page4" class="page-pill">Hal 4: Wedding &amp; Text Effects</a>
+    </div>
+
+    <div class="action-buttons">
+      <a href="index.html" class="btn-action btn-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Ke Web Portofolio</span>
+      </a>
+      <button type="button" class="btn-action btn-print" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>Cetak / Simpan PDF (A4)</span>
+      </button>
+    </div>
+  </aside>
+
+
+  <!-- ===================================================================
+       HALAMAN 1: SOCIAL MEDIA POST (KARYA 1-4, GRID 2x2 PENUH 100%)
+       =================================================================== -->
+  <article class="a4-page" id="page1">
+    
+    <!-- Header Dark: kin9candra's Portofolio -->
+    <header class="p1-header-dark">
+      <div class="p1-brand-combo">
+        <span class="p1-brand-kin9">kin9</span><span class="p1-brand-candra">candra's</span>
+        <span class="p1-brand-portfolio">Portofolio</span>
+      </div>
+
+      <!-- Designer Profile Capsule -->
+      <div class="p1-profile-capsule">
+        <img src="Headline/Wahyu_Candra_CV.jpg" alt="Wahyu Candra" class="p1-avatar-mini">
+        <div class="p1-profile-info">
+          <span class="p1-profile-name">Wahyu Candra</span>
+          <span class="p1-profile-contact">WA: <strong>0851 5966 8886</strong> &bull; IG: @kin9candra</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page 1 Body: Meregang Penuh Mengisi 100% Tinggi Halaman -->
+    <main class="page-full-body">
+      
+      <!-- Sub Category Header -->
+      <div class="category-sub-bar">
+        <div>
+          <div class="csb-tag">Koleksi Desain Grafis</div>
+          <h1 class="csb-title">Social Media Post &mdash; <em>Selected Showcase.</em></h1>
+        </div>
+        <div class="csb-meta">
+          Feed Instagram &bull; Rasio 4:5
+        </div>
+      </div>
+
+      <!-- 2x2 Grid: 4 Karya Penuh (8.jpg, 1.jpg, 2.jpg, 3.jpg) Tanpa Teks di Bawah -->
+      <section class="grid-2x2-full">
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/8.jpg" alt="Social Media Post 08">
+        </div>
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/1.jpg" alt="Social Media Post 01">
+        </div>
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/2.jpg" alt="Social Media Post 02">
+        </div>
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/3.jpg" alt="Social Media Post 03">
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Page 1 Footer Bar -->
+    <footer class="page-footer-bar">
+      <div class="page-footer-left">
+        <span>kin9candra's Portofolio &mdash; Wahyu Candra</span>
+        <span class="page-footer-bullet"></span>
+        <span>Social Media Post Collection</span>
+      </div>
+      <div class="page-footer-num">Halaman 01 / 04</div>
+    </footer>
+
+  </article>
+
+
+  <!-- ===================================================================
+       HALAMAN 2: SOCIAL MEDIA POST (KARYA 5-8, GRID 2x2 PENUH 100%)
+       =================================================================== -->
+  <article class="a4-page" id="page2">
+    
+    <!-- Minimal Header: kin9candra's Portofolio -->
+    <header class="page-minimal-header">
+      <div>
+        <div class="pmh-tag">kin9candra's Portofolio</div>
+        <h2 class="pmh-title">Social Media Post &mdash; <em>Selected Showcase.</em></h2>
+      </div>
+      <div class="pmh-meta">
+        Feed Instagram &bull; Rasio 4:5
+      </div>
+    </header>
+
+    <!-- Page 2 Body: Meregang Penuh Mengisi 100% Tinggi Halaman -->
+    <main class="page-full-body">
+      
+      <!-- 2x2 Grid: 4 Karya Penuh (4.jpg, 5.jpg, 6.jpg, 7.jpg) Tanpa Teks di Bawah -->
+      <section class="grid-2x2-full">
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/4.jpg" alt="Social Media Post 04">
+        </div>
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/5.jpg" alt="Social Media Post 05">
+        </div>
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/6.jpg" alt="Social Media Post 06">
+        </div>
+        <div class="art-frame-box">
+          <img src="Social%20Media%20Post/7.jpg" alt="Social Media Post 07">
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Page 2 Footer Bar -->
+    <footer class="page-footer-bar">
+      <div class="page-footer-left">
+        <span>kin9candra's Portofolio &mdash; Wahyu Candra</span>
+        <span class="page-footer-bullet"></span>
+        <span>Social Media Post Collection</span>
+      </div>
+      <div class="page-footer-num">Halaman 02 / 04</div>
+    </footer>
+
+  </article>
+
+
+  <!-- ===================================================================
+       HALAMAN 3: LOGO DESIGN MOCKUPS (RASIO ASLI 16:9, 10 SLIDE LENGKAP PENUH)
+       =================================================================== -->
+  <article class="a4-page" id="page3">
+    
+    <!-- Minimal Header: kin9candra's Portofolio -->
+    <header class="page-minimal-header">
+      <div>
+        <div class="pmh-tag">kin9candra's Portofolio</div>
+        <h2 class="pmh-title">Logo Design &mdash; <em>Selected Showcase.</em></h2>
+      </div>
+      <div class="pmh-meta">
+        Corporate Identity &amp; Brand Mockups (Rasio Asli 16:9)
+      </div>
+    </header>
+
+    <!-- Page 3 Body: Meregang Penuh Mengisi 100% Tinggi Halaman Tanpa Terpotong -->
+    <main class="page-full-body">
+      
+      <!-- 5 Rows x 2 Columns = 10 Mockup Slides Sesuai Ukuran Asli 16:9 -->
+      <section class="logo-mockup-10grid">
+        
+        <!-- PROJEK 1 Mockup 23 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%201/PENJELASAN%20IDENTITAS%20VISUAL%20PONTIANAK%20254-23.jpg" alt="Logo Mockup Pontianak 254 - Slide 23">
+        </div>
+
+        <!-- PROJEK 1 Mockup 24 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%201/PENJELASAN%20IDENTITAS%20VISUAL%20PONTIANAK%20254-24.jpg" alt="Logo Mockup Pontianak 254 - Slide 24">
+        </div>
+
+        <!-- PROJEK 1 Mockup 25 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%201/PENJELASAN%20IDENTITAS%20VISUAL%20PONTIANAK%20254-25.jpg" alt="Logo Mockup Pontianak 254 - Slide 25">
+        </div>
+
+        <!-- PROJEK 1 Mockup 26 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%201/PENJELASAN%20IDENTITAS%20VISUAL%20PONTIANAK%20254-26.jpg" alt="Logo Mockup Pontianak 254 - Slide 26">
+        </div>
+
+        <!-- PROJEK 1 Mockup 27 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%201/PENJELASAN%20IDENTITAS%20VISUAL%20PONTIANAK%20254-27.jpg" alt="Logo Mockup Pontianak 254 - Slide 27">
+        </div>
+
+        <!-- PROJEK 1 Mockup 28 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%201/PENJELASAN%20IDENTITAS%20VISUAL%20PONTIANAK%20254-28.jpg" alt="Logo Mockup Pontianak 254 - Slide 28">
+        </div>
+
+        <!-- PROJEK 2 Mockup 21 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%202/LOGO%20PRESENTATION%20STYLE%201-21.jpg" alt="Logo Mockup Style 1 - Slide 21">
+        </div>
+
+        <!-- PROJEK 2 Mockup 22 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%202/LOGO%20PRESENTATION%20STYLE%201-22.jpg" alt="Logo Mockup Style 1 - Slide 22">
+        </div>
+
+        <!-- PROJEK 2 Mockup 23 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%202/LOGO%20PRESENTATION%20STYLE%201-23.jpg" alt="Logo Mockup Style 1 - Slide 23">
+        </div>
+
+        <!-- PROJEK 2 Mockup 24 -->
+        <div class="logo-frame-16x9">
+          <img src="Logo/PROJEK%202/LOGO%20PRESENTATION%20STYLE%201-24.jpg" alt="Logo Mockup Style 1 - Slide 24">
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Page 3 Footer Bar -->
+    <footer class="page-footer-bar">
+      <div class="page-footer-left">
+        <span>kin9candra's Portofolio &mdash; Wahyu Candra</span>
+        <span class="page-footer-bullet"></span>
+        <span>Logo Design Presentation Mockups</span>
+      </div>
+      <div class="page-footer-num">Halaman 03 / 04</div>
+    </footer>
+
+  </article>
+
+
+  <!-- ===================================================================
+       HALAMAN 4: WEDDING (4) & TEXT EFFECTS (4) + KONTAK (PENUH 100%)
+       =================================================================== -->
+  <article class="a4-page" id="page4">
+    
+    <!-- Minimal Header: kin9candra's Portofolio -->
+    <header class="page-minimal-header">
+      <div>
+        <div class="pmh-tag">kin9candra's Portofolio</div>
+        <h2 class="pmh-title">Wedding &amp; Text Effects &mdash; <em>Selected Showcase.</em></h2>
+      </div>
+      <div class="pmh-meta">
+        Undangan Cetak &amp; Tipografi Seni
+      </div>
+    </header>
+
+    <!-- Page 4 Body: Meregang Penuh Mengisi 100% Tinggi Halaman -->
+    <main class="page-full-body">
+      
+      <!-- Category 1: Wedding Invitation (4 Samples in 2x2 Grid) -->
+      <div class="p4-section-label">Wedding Invitation</div>
+      <section class="p4-double-row-grid">
+        <div class="p4-art-frame">
+          <img src="Wedding%20Invitation/INVITATION%20TEMPLATE%20188.jpg" alt="Wedding Invitation 188">
+        </div>
+        <div class="p4-art-frame">
+          <img src="Wedding%20Invitation/INVITATION%20TEMPLATE%20210.jpg" alt="Wedding Invitation 210">
+        </div>
+        <div class="p4-art-frame">
+          <img src="Wedding%20Invitation/INVITATION%20TEMPLATE%20241.jpg" alt="Wedding Invitation 241">
+        </div>
+        <div class="p4-art-frame">
+          <img src="Wedding%20Invitation/INVITATION%20TEMPLATE%20346.jpg" alt="Wedding Invitation 346">
+        </div>
+      </section>
+
+      <!-- Category 2: Text Effects (4 Samples in 2x2 Grid) -->
+      <div class="p4-section-label">Text Effects</div>
+      <section class="p4-double-row-grid">
+        <div class="p4-art-frame">
+          <img src="Text%20Effect/wmremove-transformed%20(3).jpeg" alt="Text Effect 03">
+        </div>
+        <div class="p4-art-frame">
+          <img src="Text%20Effect/wmremove-transformed%20(4).jpeg" alt="Text Effect 04">
+        </div>
+        <div class="p4-art-frame">
+          <img src="Text%20Effect/wmremove-transformed%20(5).jpeg" alt="Text Effect 05">
+        </div>
+        <div class="p4-art-frame">
+          <img src="Text%20Effect/upscalemedia-transformed%20(1).jpeg" alt="Text Effect 01">
+        </div>
+      </section>
+
+      <!-- Minimalist Contact Card (Tanpa teks penawaran yang tidak perlu) -->
+      <section class="p4-contact-card">
+        <div class="p4-contact-name">Wahyu Candra &mdash; <span>Graphic Designer</span></div>
+
+        <div class="p4-contact-pills">
+          <div class="p4-pill-item">
+            <span class="p4-pill-lbl">WhatsApp</span>
+            <span class="p4-pill-val accent">0851 5966 8886</span>
+          </div>
+          <div class="p4-pill-item">
+            <span class="p4-pill-lbl">Instagram</span>
+            <span class="p4-pill-val accent">@kin9candra</span>
+          </div>
+          <div class="p4-pill-item">
+            <span class="p4-pill-lbl">Email</span>
+            <span class="p4-pill-val">kin9candra@gmail.com</span>
+          </div>
+          <div class="p4-pill-item">
+            <span class="p4-pill-lbl">Portofolio</span>
+            <span class="p4-pill-val">kin9candra.github.io</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Page 4 Footer Bar -->
+    <footer class="page-footer-bar">
+      <div class="page-footer-left">
+        <span>kin9candra's Portofolio &mdash; Wahyu Candra</span>
+        <span class="page-footer-bullet"></span>
+        <span>Wedding Invitation &amp; Text Effects Collection</span>
+      </div>
+      <div class="page-footer-num">Halaman 04 / 04</div>
+    </footer>
+
+  </article>
+
+</body>
+</html>

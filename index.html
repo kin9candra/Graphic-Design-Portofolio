@@ -37,20 +37,27 @@
 
         <!-- Navigation Links (Desktop & Mobile Drawer) -->
         <ul class="nav-links" id="navLinks">
-          <li><a href="#hero" class="nav-link">Home</a></li>
-          <li><a href="#gallery" class="nav-link">Galeri Karya</a></li>
-          <li><a href="#booking" class="nav-link">Booking Inquiry</a></li>
+          <li><a href="#hero" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">Galeri Karya</a></li>
+          <li><a href="cv.html" class="nav-link" target="_blank" data-i18n="nav_cv">CV / Resume</a></li>
+          <li><a href="#booking" class="nav-link" data-i18n="nav_booking">Booking Inquiry</a></li>
           <li class="mobile-cta-item">
             <a href="#booking" class="btn-header-cta mobile-drawer-btn">
-              <span>Mulai Proyek</span>
+              <span data-i18n="nav_cta">Mulai Proyek</span>
               <span class="btn-sparkle">✦</span>
             </a>
           </li>
         </ul>
 
         <div class="header-right-actions">
+          <!-- Language Switcher Pill Toggle -->
+          <button type="button" class="lang-switch" id="langSwitch" aria-label="Ganti Bahasa / Switch Language" title="Ganti Bahasa / Switch Language">
+            <span class="lang-option lang-id active">ID</span>
+            <span class="lang-option lang-en">EN</span>
+          </button>
+
           <a href="#booking" class="btn-header-cta desktop-cta">
-            <span>Mulai Proyek</span>
+            <span data-i18n="nav_cta">Mulai Proyek</span>
             <span class="btn-sparkle">✦</span>
           </a>
 
@@ -117,7 +124,7 @@
             
             <div class="hero-status-pill">
               <span class="status-dot-pulse"></span>
-              <span>Available for Creative Commissions</span>
+              <span data-i18n="hero_available">Available for Creative Commissions</span>
             </div>
             
             <h1 class="hero-main-heading">
@@ -129,26 +136,26 @@
 
             <div class="hero-cta-group">
               <a href="#gallery" class="btn-hero-glass">
-                <span>Eksplorasi Galeri</span>
+                <span data-i18n="hero_btn_explore">Eksplorasi Galeri</span>
               </a>
               <a href="#booking" class="btn-hero-lime">
-                <span>Mulai Proyek</span>
+                <span data-i18n="hero_btn_start">Mulai Proyek</span>
                 <span class="sparkle-icon">✦</span>
               </a>
             </div>
 
             <div class="hero-stats-row">
               <div class="hero-stat-item">
-                <div class="stat-num">5 <span>Kategori</span></div>
-                <div class="stat-label">Kategori Karya</div>
+                <div class="stat-num" data-i18n="stat_num_cat" data-i18n-html="true">5 <span>Kategori</span></div>
+                <div class="stat-label" data-i18n="stat_lbl_cat">Kategori Karya</div>
               </div>
               <div class="hero-stat-item">
-                <div class="stat-num">31 <span>Karya</span></div>
-                <div class="stat-label">Terkurasi Lengkap</div>
+                <div class="stat-num" data-i18n="stat_num_curated" data-i18n-html="true">31 <span>Karya</span></div>
+                <div class="stat-label" data-i18n="stat_lbl_curated">Terkurasi Lengkap</div>
               </div>
               <div class="hero-stat-item">
-                <div class="stat-num">100<span>%</span></div>
-                <div class="stat-label">Desain Kustom</div>
+                <div class="stat-num" data-i18n="stat_num_custom" data-i18n-html="true">100<span>%</span></div>
+                <div class="stat-label" data-i18n="stat_lbl_custom">Desain Kustom</div>
               </div>
             </div>
 
@@ -195,14 +202,14 @@
       <div class="full-width-container">
         
         <div class="gallery-header">
-          <span class="section-label">Galeri Karya Terpilih</span>
-          <h2 class="gallery-title display-title">Koleksi Desain Grafis</h2>
+          <span class="section-label" data-i18n="gallery_label">Galeri Karya Terpilih</span>
+          <h2 class="gallery-title display-title" data-i18n="gallery_title">Koleksi Desain Grafis</h2>
 
           <!-- Category Filters (Always Single Row with Horizontal Scroll) -->
           <div class="filter-tabs-wrapper">
             <div class="filter-tabs" role="tablist">
               <button type="button" class="filter-btn active" data-filter="all">
-                <span>Semua Karya</span>
+                <span data-i18n="filter_all">Semua Karya</span>
                 <span class="filter-badge">31</span>
               </button>
               <button type="button" class="filter-btn" data-filter="social-media">
@@ -233,7 +240,7 @@
         <div class="category-block" data-category="social-media">
           <div class="category-block-header">
             <h3 class="category-block-title">Social Media Post</h3>
-            <span class="category-block-count">13 Karya</span>
+            <span class="category-block-count" data-i18n="cat_count_sosmed">13 Karya</span>
           </div>
 
           <div class="gallery-grid-row">
@@ -245,7 +252,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -261,7 +268,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -277,7 +284,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -293,7 +300,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -309,7 +316,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -325,7 +332,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -341,7 +348,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -357,7 +364,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">[Fake Project] Social Media Post - Toko Royal</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -373,7 +380,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">Modern Typography Post #09</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -389,7 +396,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">Product Highlight Feed #10</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -406,7 +413,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">Aesthetic Moodboard Series</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -423,7 +430,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">Minimalist Atmosphere Feed</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -440,7 +447,7 @@
                   <span class="item-category-tag">Social Media Post</span>
                   <h3 class="item-title">Special Event Post #08</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -455,7 +462,7 @@
         <div class="category-block" data-category="logo-design">
           <div class="category-block-header">
             <h3 class="category-block-title">Logo Design &amp; Brand Identity</h3>
-            <span class="category-block-count">2 Projek Presentasi</span>
+            <span class="category-block-count" data-i18n="cat_count_logo">2 Projek Presentasi</span>
           </div>
 
           <div class="gallery-grid-row gallery-grid-logo">
@@ -464,14 +471,14 @@
               <div class="item-thumb-wrapper">
                 <div class="multi-slide-badge">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                  <span>33 Halaman (Scroll View)</span>
+                  <span data-i18n="logo_slides_33">33 Halaman (Scroll View)</span>
                 </div>
                 <img src="Logo/PROJEK%201/PENJELASAN%20IDENTITAS%20VISUAL%20PONTIANAK%20254-01.jpg" alt="Identitas Visual Pontianak 254 - Halaman 01" class="item-img" loading="lazy">
                 <div class="item-overlay">
                   <span class="item-category-tag">Logo Design &amp; Brand Identity</span>
                   <h3 class="item-title">Identitas Visual Pontianak 254</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Buka Presentasi (Scroll ke Bawah)</span>
+                    <span class="item-view-btn" data-i18n="logo_view_btn">Buka Presentasi (Scroll ke Bawah)</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -485,14 +492,14 @@
               <div class="item-thumb-wrapper">
                 <div class="multi-slide-badge">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                  <span>27 Halaman (Scroll View)</span>
+                  <span data-i18n="logo_slides_27">27 Halaman (Scroll View)</span>
                 </div>
                 <img src="Logo/PROJEK%202/LOGO%20PRESENTATION%20STYLE%201-01.jpg" alt="Logo Presentation Style 1 - Halaman 01" class="item-img" loading="lazy">
                 <div class="item-overlay">
                   <span class="item-category-tag">Logo Design &amp; Brand Identity</span>
                   <h3 class="item-title">Logo Presentation &amp; Guidelines</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Buka Presentasi (Scroll ke Bawah)</span>
+                    <span class="item-view-btn" data-i18n="logo_view_btn">Buka Presentasi (Scroll ke Bawah)</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -507,7 +514,7 @@
         <div class="category-block" data-category="wedding-invitation">
           <div class="category-block-header">
             <h3 class="category-block-title">Wedding Invitation</h3>
-            <span class="category-block-count">9 Karya</span>
+            <span class="category-block-count" data-i18n="cat_count_wedding">9 Karya</span>
           </div>
 
           <div class="gallery-grid-row">
@@ -519,7 +526,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template - Amanda &amp; Marwan</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -536,7 +543,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template - Ainun &amp; Habibie</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -552,7 +559,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template #188</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -568,7 +575,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template #210</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -584,7 +591,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template #241</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -600,7 +607,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template #346</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -616,7 +623,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template #365</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -632,7 +639,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template #384</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -648,7 +655,7 @@
                   <span class="item-category-tag">Wedding Invitation</span>
                   <h3 class="item-title">Invitation Template #417</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -663,7 +670,7 @@
         <div class="category-block" data-category="text-effects">
           <div class="category-block-header">
             <h3 class="category-block-title">Text Effects</h3>
-            <span class="category-block-count">5 Karya</span>
+            <span class="category-block-count" data-i18n="cat_count_text">5 Karya</span>
           </div>
 
           <div class="gallery-grid-row">
@@ -674,7 +681,7 @@
                   <span class="item-category-tag">Text Effects</span>
                   <h3 class="item-title">3D Glossy Emerald &amp; Lime - Green Text Effect</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -690,7 +697,7 @@
                   <span class="item-category-tag">Text Effects</span>
                   <h3 class="item-title">3D Playful Textured - Back to School Text Effect</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -706,7 +713,7 @@
                   <span class="item-category-tag">Text Effects</span>
                   <h3 class="item-title">Minimalist 3D Isometric - White Space Text Effect</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -722,7 +729,7 @@
                   <span class="item-category-tag">Text Effects</span>
                   <h3 class="item-title">Paper Cutout &amp; Sketch - Back to School Text Effect</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -738,7 +745,7 @@
                   <span class="item-category-tag">Text Effects</span>
                   <h3 class="item-title">3D Cartoon Game Style - Little Heroes Text Effect</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -753,7 +760,7 @@
         <div class="category-block" data-category="presentation">
           <div class="category-block-header">
             <h3 class="category-block-title">Presentation</h3>
-            <span class="category-block-count">2 Karya</span>
+            <span class="category-block-count" data-i18n="cat_count_pres">2 Karya</span>
           </div>
 
           <div class="gallery-grid-row">
@@ -764,7 +771,7 @@
                   <span class="item-category-tag">Presentation</span>
                   <h3 class="item-title">Corporate Business &amp; Company Profile - Presentation Template</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -780,7 +787,7 @@
                   <span class="item-category-tag">Presentation</span>
                   <h3 class="item-title">Modern Monochrome Business &amp; Infographic - Presentation Template</h3>
                   <div class="item-action-row">
-                    <span class="item-view-btn">Lihat Penuh</span>
+                    <span class="item-view-btn" data-i18n="item_view_full">Lihat Penuh</span>
                     <div class="item-expand-icon">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                     </div>
@@ -796,7 +803,7 @@
         <!-- More Portfolio Button -->
         <div class="more-portfolio-wrap">
           <a href="https://www.magnific.com/author/kin9candrastock" target="_blank" rel="noopener noreferrer" class="btn-more-portfolio">
-            <span>More Portfolio</span>
+            <span data-i18n="more_portfolio_btn">More Portfolio</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
@@ -820,7 +827,7 @@
         </div>
         <button class="scroll-modal-close-btn" id="scrollModalClose" aria-label="Tutup presentasi">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-          <span>Tutup</span>
+          <span data-i18n="modal_close_btn">Tutup</span>
         </button>
       </div>
 
@@ -870,9 +877,9 @@
           
           <!-- Left Column: Context & Direct Contact -->
           <div class="booking-info">
-            <span class="section-label">Hubungi Saya</span>
-            <h2 class="display-title">Mari Wujudkan Proyek Desain Anda</h2>
-            <p>
+            <span class="section-label" data-i18n="booking_label">Hubungi Saya</span>
+            <h2 class="display-title" data-i18n="booking_title">Mari Wujudkan Proyek Desain Anda</h2>
+            <p data-i18n="booking_desc">
               Punya ide menarik atau butuh materi visual berstandar tinggi untuk bisnis, brand, atau perayaan spesial Anda? Silakan isi formulir di samping untuk mendiskusikan kebutuhan, timeline, dan penawaran terbaik.
             </p>
 
@@ -897,7 +904,7 @@
               </div>
               <div class="contact-pill-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Desain Kustom &amp; Berorientasi Kualitas</span>
+                <span data-i18n="booking_pill_quality">Desain Kustom &amp; Berorientasi Kualitas</span>
               </div>
             </div>
           </div>
@@ -908,66 +915,66 @@
               
               <div class="form-row">
                 <div class="form-group">
-                  <label for="clientName" class="form-label">Nama Lengkap <span class="req">*</span></label>
-                  <input type="text" id="clientName" class="form-input" placeholder="contoh: Budi Santoso" required>
+                  <label for="clientName" class="form-label"><span data-i18n="form_lbl_name">Nama Lengkap</span> <span class="req">*</span></label>
+                  <input type="text" id="clientName" class="form-input" data-i18n-placeholder="form_ph_name" placeholder="contoh: Budi Santoso" required>
                 </div>
                 <div class="form-group">
-                  <label for="clientEmail" class="form-label">Alamat Email <span class="req">*</span></label>
-                  <input type="email" id="clientEmail" class="form-input" placeholder="budi@example.com" required>
+                  <label for="clientEmail" class="form-label"><span data-i18n="form_lbl_email">Alamat Email</span> <span class="req">*</span></label>
+                  <input type="email" id="clientEmail" class="form-input" data-i18n-placeholder="form_ph_email" placeholder="budi@example.com" required>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="clientPhone" class="form-label">Nomor WhatsApp / HP <span class="req">*</span></label>
+                  <label for="clientPhone" class="form-label"><span data-i18n="form_lbl_phone">Nomor WhatsApp / HP</span> <span class="req">*</span></label>
                   <input type="tel" id="clientPhone" class="form-input" placeholder="+62 812-xxxx-xxxx" required>
                 </div>
                 <div class="form-group">
-                  <label for="projectCategory" class="form-label">Kategori Desain <span class="req">*</span></label>
+                  <label for="projectCategory" class="form-label"><span data-i18n="form_lbl_cat">Kategori Desain</span> <span class="req">*</span></label>
                   <select id="projectCategory" class="form-select" required>
-                    <option value="Social Media Post">Social Media Post</option>
-                    <option value="Logo Design & Brand Identity">Logo Design &amp; Brand Identity</option>
-                    <option value="Wedding Invitation">Wedding Invitation</option>
-                    <option value="Paket Lengkap / Custom Project">Paket Lengkap / Custom Project</option>
+                    <option value="Social Media Post" data-i18n="form_opt_cat_sosmed">Social Media Post</option>
+                    <option value="Logo Design & Brand Identity" data-i18n="form_opt_cat_logo">Logo Design &amp; Brand Identity</option>
+                    <option value="Wedding Invitation" data-i18n="form_opt_cat_wedding">Wedding Invitation</option>
+                    <option value="Paket Lengkap / Custom Project" data-i18n="form_opt_cat_custom">Paket Lengkap / Custom Project</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="projectTimeline" class="form-label">Estimasi Timeline / Deadline</label>
+                  <label for="projectTimeline" class="form-label" data-i18n="form_lbl_timeline">Estimasi Timeline / Deadline</label>
                   <select id="projectTimeline" class="form-select">
-                    <option value="Mendesak / Urgent (&lt; 7 Hari)">Mendesak / Urgent (&lt; 7 Hari)</option>
-                    <option value="Standar (1 - 2 Minggu)" selected>Standar (1 - 2 Minggu)</option>
-                    <option value="Fleksibel (&gt; 2 Minggu)">Fleksibel (&gt; 2 Minggu)</option>
+                    <option value="Mendesak / Urgent (< 7 Hari)" data-i18n="form_opt_time_urgent">Mendesak / Urgent (&lt; 7 Hari)</option>
+                    <option value="Standar (1 - 2 Minggu)" data-i18n="form_opt_time_standard" selected>Standar (1 - 2 Minggu)</option>
+                    <option value="Fleksibel (> 2 Minggu)" data-i18n="form_opt_time_flexible">Fleksibel (&gt; 2 Minggu)</option>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="projectBudget" class="form-label">Estimasi Anggaran</label>
+                  <label for="projectBudget" class="form-label" data-i18n="form_lbl_budget">Estimasi Anggaran</label>
                   <select id="projectBudget" class="form-select">
-                    <option value="Under Rp 500.000">Under Rp 500.000</option>
-                    <option value="Rp 500.000 - Rp 1.500.000" selected>Rp 500.000 - Rp 1.500.000</option>
-                    <option value="Rp 1.500.000 - Rp 3.500.000">Rp 1.500.000 - Rp 3.500.000</option>
-                    <option value="Rp 3.500.000+ (Comprehensive Brand)">Rp 3.500.000+ (Comprehensive Brand)</option>
+                    <option value="Under Rp 500.000" data-i18n="form_opt_budget_1">Under Rp 500.000</option>
+                    <option value="Rp 500.000 - Rp 1.500.000" data-i18n="form_opt_budget_2" selected>Rp 500.000 - Rp 1.500.000</option>
+                    <option value="Rp 1.500.000 - Rp 3.500.000" data-i18n="form_opt_budget_3">Rp 1.500.000 - Rp 3.500.000</option>
+                    <option value="Rp 3.500.000+ (Comprehensive Brand)" data-i18n="form_opt_budget_4">Rp 3.500.000+ (Comprehensive Brand)</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="projectDetails" class="form-label">Deskripsi &amp; Detail Kebutuhan Desain <span class="req">*</span></label>
-                <textarea id="projectDetails" class="form-textarea" placeholder="Ceritakan konsep, referensi gaya, jumlah materi, dan kebutuhan spesifik yang Anda inginkan..." required></textarea>
+                <label for="projectDetails" class="form-label"><span data-i18n="form_lbl_details">Deskripsi &amp; Detail Kebutuhan Desain</span> <span class="req">*</span></label>
+                <textarea id="projectDetails" class="form-textarea" data-i18n-placeholder="form_ph_details" placeholder="Ceritakan konsep, referensi gaya, jumlah materi, dan kebutuhan spesifik yang Anda inginkan..." required></textarea>
               </div>
 
               <div class="form-submit-row">
                 <button type="submit" class="btn-submit-booking">
-                  <span>Kirim via Email</span>
+                  <span data-i18n="form_btn_email">Kirim via Email</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </button>
                 <button type="button" id="btnSubmitWA" class="btn-wa-booking">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
-                  <span>Kirim via WhatsApp</span>
+                  <span data-i18n="form_btn_wa">Kirim via WhatsApp</span>
                 </button>
               </div>
 
@@ -996,7 +1003,7 @@
         </div>
 
         <a href="#hero" class="footer-back-to-top">
-          <span>Kembali ke Atas</span>
+          <span data-i18n="footer_back_top">Kembali ke Atas</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
         </a>
       </div>
@@ -1008,7 +1015,8 @@
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
