@@ -15,8 +15,57 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Stylesheet (with cache-busting version) -->
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+
+  <!-- Critical Inline Styles for Language Switcher (Guarantees perfect rendering across CDN/cache) -->
+  <style>
+    .lang-switch {
+      display: inline-flex !important;
+      align-items: center !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      border-radius: 9999px !important;
+      padding: 3px !important;
+      cursor: pointer !important;
+      user-select: none !important;
+      transition: all 0.25s ease !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      outline: none !important;
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+      vertical-align: middle !important;
+      line-height: normal !important;
+    }
+
+    .lang-switch:hover {
+      background: rgba(255, 255, 255, 0.14) !important;
+      border-color: rgba(216, 252, 54, 0.4) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .lang-switch .lang-option {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
+      padding: 5px 10px !important;
+      border-radius: 9999px !important;
+      color: #a1a1aa !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      line-height: 1 !important;
+      letter-spacing: 0.04em !important;
+      display: inline-block !important;
+    }
+
+    .lang-switch .lang-option.active {
+      background: #d8fc36 !important;
+      color: #060806 !important;
+      font-weight: 800 !important;
+      box-shadow: 0 0 12px rgba(216, 252, 54, 0.35) !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -1015,8 +1064,8 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/i18n.js"></script>
-  <script src="js/script.js"></script>
+  <!-- Scripts (with cache-busting version) -->
+  <script src="js/i18n.js?v=2.2"></script>
+  <script src="js/script.js?v=2.2"></script>
 </body>
 </html>
